@@ -21,6 +21,9 @@ class Students(db.Model):
 	grade = db.Column(db.Integer, nullable=False)
 	parent_contact = db.Column(db.Integer, nullable=False)
 
+	def __repr__(self):
+		return f"{self.admision_no}"
+
 
 @app.route('/')
 def index():
