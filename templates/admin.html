@@ -23,13 +23,29 @@
 		  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
 		  <table id="myTable">
 			  <tr class="header">
-			    <th style="width:60%;">Name</th>
-			    <th style="width:40%;">Country</th>
+			    <th>Admision No</th>
+			    <th>First Name</th>
+			    <th>Last Name</th>
+			    <th>Blood Group</th>
+			    <th>Religion</th>
+			    <th>Sport</th>
+			    <th>Mediacal Conditions</th>
+			    <th>Grade</th>
+			    <th>Parent Contact</th>
 			  </tr>
-			  <tr>
-			    <td>Alfreds Futterkiste</td>
-			    <td>Germany</td>
-			  </tr>			
+			  {% for std in Students %}
+				  <tr>
+				    <td>{{std.admision_no}}</td>
+				    <td>{{std.first_name}}</td>
+				    <td>{{std.last_name}}</td>
+				    <td>{{std.blood_type}}</td>
+				    <td>{{std.religion}}</td>
+				    <td>{{std.sport}}</td>
+				    <td>{{std.medical_conditions}}</td>
+				    <td>{{std.grade}}</td>
+				    <td>{{std.parent_contact}}</td>
+				  </tr>	
+			  {% endfor %}		
 			</table>
 		</div>
   </div>

@@ -27,7 +27,8 @@ class Students(db.Model):
 
 @app.route('/')
 def index():
-	return render_template('admin.html')
+	students = Students.query.all()
+	return render_template('admin.html', Students=students)
 
 
 if __name__ == '__main__':
