@@ -19,23 +19,27 @@
 		</div>
 	<!-- </div> -->
     <!-- <div class="col-sm-8"> -->
-	    <div class="main">
-		  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
-		  <table id="myTable">
-			  <tr class="header">
-			    <th>Admision No</th>
-			    <th>First Name</th>
-			    <th>Last Name</th>
-			    <th>Blood Group</th>
-			    <th>Religion</th>
-			    <th>Sport</th>
-			    <th>Mediacal Conditions</th>
-			    <th>Grade</th>
-			    <th>Parent Contact</th>
-			  </tr>
+	    <div class="container mt-2">
+		  	<input class="form-control" id="myInput" type="text" placeholder="Search..">
+		  <table id="myTable" class='table table-bordered'>
+		  		<thead>
+		  			<tr>
+					    <th>AdmisionNo</th>
+					    <th>FirstName</th>
+					    <th>LastName</th>
+					    <th>BloodGroup</th>
+					    <th>Religion</th>
+					    <th>Sport</th>
+					    <th>MediacalCondition</th>
+					    <th>Grade</th>
+					    <th>ParentContact</th>
+			  		</tr>
+		  		</thead>
+			  
 			  {% for std in Students %}
-				  <tr>
-				    <a href=""><td>{{std.admision_no}}</td></a>
+			  <tbody id="myTable">
+					<tr>
+				    <td>{{std.admision_no}}</td>
 				    <td>{{std.first_name}}</td>
 				    <td>{{std.last_name}}</td>
 				    <td>{{std.blood_type}}</td>
@@ -51,6 +55,7 @@
 				    	<a href='/update/{{std.id}}' class="btn btn-primary">Update</a>
 				    </td>
 				  </tr>	
+			  </tbody>	
 			  {% endfor %}		
 			</table>
 		</div>
