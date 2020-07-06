@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -29,6 +29,43 @@ class Students(db.Model):
 def index():
 	students = Students.query.all()
 	return render_template('admin.html', Students=students)
+
+@app.route('/delete/<int:id>')
+def delete(id):
+	student_to_delete = Students.query.get_or_404(id)
+	db.session.delete(student_to_delete)
+	db.session.commit()
+	return redirect('/')
+
+@app.route('/update/<int:id>', methods=['GET', 'POST'])
+def update(id):
+	student = Students.query.get_or_404(id)
+	if request.method == 'POST':
+		student.first_name = request.form['firstname']
+		student.last_name = request.form['lastname']
+		student.admision_no = request.form['adm']
+		student.blood_type = request.form['blood']
+		student.religion = request.form['religion']
+		student.medical_conditions = request.form['medical']
+		student.grade = request.form['grade']
+		student.parent_contact = request.form['parent']
+		db.session.commit()
+		return redirect(url_for('index'))
+	else:
+		return render_template('update.html', id=id, students=student)
+
+	
+
+
+
+
+
+
+
+
+
+
+
 
 
 if __name__ == '__main__':

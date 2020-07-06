@@ -35,7 +35,7 @@
 			  </tr>
 			  {% for std in Students %}
 				  <tr>
-				    <td>{{std.admision_no}}</td>
+				    <a href=""><td>{{std.admision_no}}</td></a>
 				    <td>{{std.first_name}}</td>
 				    <td>{{std.last_name}}</td>
 				    <td>{{std.blood_type}}</td>
@@ -44,6 +44,12 @@
 				    <td>{{std.medical_conditions}}</td>
 				    <td>{{std.grade}}</td>
 				    <td>{{std.parent_contact}}</td>
+				    <td>
+				    	<a href='/delete/{{std.id}}' class="btn btn-sm btn-dark">Delete</a>
+				    </td>
+				    <td>
+				    	<a href='/update/{{std.id}}' class="btn btn-sm btn-dark">Update</a>
+				    </td>
 				  </tr>	
 			  {% endfor %}		
 			</table>

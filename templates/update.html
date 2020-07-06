@@ -1,0 +1,59 @@
+{% extends 'admin_base.html' %}
+
+
+{% block title %}
+	Management System
+{% endblock title %}
+
+
+
+
+
+{% block content %}
+	<form action="/update/{{students.id}}" method="POST" class="form-group">
+		<div class='form-group'>
+			<label for="">FirstName</label>
+			<input type="text" name="firstname" class="form-control"value={{students.first_name}}>
+		</div>
+		<div class='form-group'>
+			<label for="">LastName</label>
+			<input type="text" name="lastname" class="form-control"value={{students.last_name}}>
+		</div>
+
+		<div class='form-group'>
+			<label for="">Admn NO</label>
+			<input type="text" name="adm" class="form-control"value={{students.admision_no}}>
+		</div>
+		<div class='form-group'>
+			<label for="">Blood</label>
+			<input type="text" name="blood" class="form-control"value={{students.blood_type}}>
+		</div>
+		<div class='form-group'>
+			<label for="">Religion</label>
+			<input type="text" name="religion" class="form-control"value={{students.religion}}>
+		</div>
+		<div class='form-group'>
+			<label for="">FirstName</label>
+			<input type="text" name="medical" class="form-control"value={{students.medical_conditions}}>
+		</div>
+		<div class='form-group'>
+			<label for="">Grade</label>
+			<input type="text" name="grade" class="form-control"value={{students.grade}}>
+		</div>
+		<div class='form-group'>
+			<label for="">ParentContact</label>
+			<input type="text" name="parent" class="form-control"value={{students.parent_contact}}>
+		</div>
+		<button class="btn btn-block btn-dark">Submit</button>
+	</form>
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
