@@ -10,42 +10,73 @@
 
 
 {% block content %}
-	<form action="/update/{{students.id}}" method="POST" class="form-group">
-		<div class='form-group'>
-			<label for="">FirstName</label>
-			<input type="text" name="firstname" class="form-control"value={{students.first_name}}>
-		</div>
-		<div class='form-group'>
-			<label for="">LastName</label>
-			<input type="text" name="lastname" class="form-control"value={{students.last_name}}>
+<div class="container">
+	<form action="/update/{{students.id}}" method="POST" class="was-validated">
+		<div class='row'>
+			<div class="col">
+				<label for="">FirstName</label>
+				<input type="text" name="firstname" id="firstname" class="form-control" required value={{students.first_name}}>
+				<div class="valid-feedback">Valid.</div>
+      			<div class="invalid-feedback">Please fill out this field.</div>
+			</div>	
+		
+			<div class='col'>
+				<label for="">LastName</label>
+				<input type="text" name="lastname" class="form-control" required value={{students.last_name}}>
+				<div class="valid-feedback">Valid.</div>
+	      		<div class="invalid-feedback">Please fill out this field.</div>
+	      	</div>
 		</div>
 
-		<div class='form-group'>
-			<label for="">Admn NO</label>
-			<input type="text" name="adm" class="form-control"value={{students.admision_no}}>
+		<div class='row'>
+			<div class="col">
+				<label for="">Admn NO</label>
+				<input type="text" name="adm" class="form-control" required value={{students.admision_no}}>
+				<div class="valid-feedback">Valid.</div>
+	      		<div class="invalid-feedback">Please fill out this field.</div>
+			</div>
+			<div class='col'>
+				<label for="">Blood</label>
+				<input type="text" name="blood" class="form-control" required value={{students.blood_type}}>
+				<div class="valid-feedback">Valid.</div>
+	      		<div class="invalid-feedback">Please fill out this field.</div>
+			</div>	
 		</div>
-		<div class='form-group'>
-			<label for="">Blood</label>
-			<input type="text" name="blood" class="form-control"value={{students.blood_type}}>
+		
+		<div class='row'>
+			<div class="col">
+				<label for="">Religion</label>
+				<input type="text" name="religion" class="form-control" required value={{students.religion}}>
+				<div class="valid-feedback">Valid.</div>
+	      		<div class="invalid-feedback">Please fill out this field.</div>
+			</div>
+			<div class='col'>
+				<label for="">FirstName</label>
+				<input type="text" name="medical" class="form-control" required value={{students.medical_conditions}}>
+				<div class="valid-feedback">Valid.</div>
+	      		<div class="invalid-feedback">Please fill out this field.</div>
+			</div>
 		</div>
-		<div class='form-group'>
-			<label for="">Religion</label>
-			<input type="text" name="religion" class="form-control"value={{students.religion}}>
+		
+		<div class='row'>
+			<div class="col">
+				<label for="">Grade</label>
+				<input type="text" name="grade" class="form-control" required value={{students.grade}}>
+				<div class="valid-feedback">Valid.</div>
+	      		<div class="invalid-feedback">Please fill out this field.</div>
+			</div>
+			<div class='col'>
+				<label for="">ParentContact</label>
+				<input type="text" name="parent" class="form-control" required value={{students.parent_contact}}>
+				<div class="valid-feedback">Valid.</div>
+	      		<div class="invalid-feedback">Please fill out this field.</div>
+			</div>
 		</div>
-		<div class='form-group'>
-			<label for="">FirstName</label>
-			<input type="text" name="medical" class="form-control"value={{students.medical_conditions}}>
-		</div>
-		<div class='form-group'>
-			<label for="">Grade</label>
-			<input type="text" name="grade" class="form-control"value={{students.grade}}>
-		</div>
-		<div class='form-group'>
-			<label for="">ParentContact</label>
-			<input type="text" name="parent" class="form-control"value={{students.parent_contact}}>
-		</div>
-		<button class="btn btn-block btn-dark">Submit</button>
+		
+		<button class="btn btn-success">Submit</button>
 	</form>
+</div>
+	
 {% endblock content %}
 
 
