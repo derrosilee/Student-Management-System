@@ -8,6 +8,10 @@
 	<title>{% block title %}{% endblock title %}</title>
 </head>
 <body>
+  {% block admin_side_bar %}
+  {% endblock admin_side_bar %}
+
+
 	{% block content %}
 	{% endblock content %}
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

@@ -6,8 +6,17 @@
 {% endblock title %}
 
 
+{% block admin_side_bar %}
+	<div class="sidenav">
+		<a href="#about">About</a>
+		<a href="#services">Services</a>
+		<a href="#clients">Clients</a>
+		<a href="#contact">Contact</a>
+	</div>
+{% endblock admin_side_bar %}
 
 {% block content %}
+
 <div class="container">
 	<form action="/update/{{students.id}}" method="POST" class="was-validated">
 		<div class='row'>
